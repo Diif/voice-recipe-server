@@ -16,12 +16,15 @@ import javax.validation.constraints.*;
  * RecipeDto
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2022-12-14T05:04:51.177Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2023-01-22T10:56:17.279Z[GMT]")
 
 
 public class RecipeDto   {
   @JsonProperty("name")
   private String name = null;
+
+  @JsonProperty("id")
+  private Long id = null;
 
   @JsonProperty("media")
   private IdDto media = null;
@@ -72,6 +75,24 @@ public class RecipeDto   {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public RecipeDto id(Long id) {
+    this.id = id;
+    return this;
+  }
+
+  /**
+   * Get id
+   * @return id
+   **/
+  
+    public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
   }
 
   public RecipeDto media(IdDto media) {
@@ -285,6 +306,7 @@ public class RecipeDto   {
     }
     RecipeDto recipeDto = (RecipeDto) o;
     return Objects.equals(this.name, recipeDto.name) &&
+        Objects.equals(this.id, recipeDto.id) &&
         Objects.equals(this.media, recipeDto.media) &&
         Objects.equals(this.cookTimeMins, recipeDto.cookTimeMins) &&
         Objects.equals(this.authorId, recipeDto.authorId) &&
@@ -299,7 +321,7 @@ public class RecipeDto   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, media, cookTimeMins, authorId, prepTimeMins, kilocalories, proteins, fats, carbohydrates, ingredientsDistributions, steps);
+    return Objects.hash(name, id, media, cookTimeMins, authorId, prepTimeMins, kilocalories, proteins, fats, carbohydrates, ingredientsDistributions, steps);
   }
 
   @Override
@@ -308,6 +330,7 @@ public class RecipeDto   {
     sb.append("class RecipeDto {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    media: ").append(toIndentedString(media)).append("\n");
     sb.append("    cookTimeMins: ").append(toIndentedString(cookTimeMins)).append("\n");
     sb.append("    authorId: ").append(toIndentedString(authorId)).append("\n");
